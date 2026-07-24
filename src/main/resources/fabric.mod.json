@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "purge_chat_rectangle",
+	"version": "${version}",
+	"name": "Purge Chat Rectangle",
+	"description": "Removes the background rectangle in the chat screen",
+	"authors": [
+		"Survivalblock"
+	],
+	"contact": {
+		"homepage": "https://github.com/ekulxam/purge_chat_rectangle",
+		"sources": "https://github.com/ekulxam/purge_chat_rectangle",
+        "issues": "https://github.com/ekulxam/purge_chat_rectangle/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/purge_chat_rectangle/icon.png",
+	"environment": "client",
+	"entrypoints": {
+	},
+	"mixins": [
+		"purge_chat_rectangle.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+        "minecraft": "*",
+		"java": ">=8",
+		"fabric-api": "*"
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "survivalblock.purgechatrectangle.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "client.ChatScreenMixin",
+    "client.ChatComponentMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
