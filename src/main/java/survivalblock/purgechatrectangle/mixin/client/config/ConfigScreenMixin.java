@@ -1,4 +1,4 @@
-package survivalblock.purgechatrectangle.mixin.client;
+package survivalblock.purgechatrectangle.mixin.client.config;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;

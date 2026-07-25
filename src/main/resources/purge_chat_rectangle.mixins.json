@@ -5,7 +5,7 @@
   "client": [
     "client.ChatComponentMixin",
     "client.ChatScreenMixin",
-    "client.ConfigScreenMixin"
+    "client.config.ConfigScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
