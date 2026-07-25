@@ -52,7 +52,7 @@ public class ChatScreenMixin {
     }
 
     // 1.21.1
-    @Group(name = "purgeChatRectangle", min = 1)
+    @Group(name = "purgeChatRectangle")
     @WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/class_332;method_25294(IIIII)V"), remap = false)
     private static boolean skipOriginalGraphicsIntermediary(int i, int j, int k, int l, int m) {
         return allowInputRectangle();
