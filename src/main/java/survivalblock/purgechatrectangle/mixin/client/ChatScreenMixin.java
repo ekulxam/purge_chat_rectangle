@@ -54,20 +54,20 @@ public class ChatScreenMixin {
     // 1.21.1
     @Group(name = "purgeChatRectangle")
     @WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/class_332;method_25294(IIIII)V"), remap = false)
-    private static boolean skipOriginalGraphicsIntermediary(int i, int j, int k, int l, int m) {
+    private static boolean skipOriginalGraphicsIntermediary(@Coerce Object instance, int i, int j, int k, int l, int m) {
         return allowInputRectangle();
     }
 
     @Group(name = "purgeChatRectangle")
     @WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;fill(IIIII)V"), remap = false)
-    private static boolean skipOriginalGraphicsMojmap(int i, int j, int k, int l, int m) {
+    private static boolean skipOriginalGraphicsMojmap(@Coerce Object instance, int i, int j, int k, int l, int m) {
         return allowInputRectangle();
     }
 
     // 26.1, GuiGraphicsExtractor didn't exist before
     @Group(name = "purgeChatRectangle")
     @WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fill(IIIII)V"), remap = false)
-    private static boolean skipOriginalExtractorDeobf(int i, int j, int k, int l, int m) {
+    private static boolean skipOriginalExtractorDeobf(@Coerce Object instance, int i, int j, int k, int l, int m) {
         return allowInputRectangle();
     }
 }

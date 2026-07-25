@@ -54,26 +54,26 @@ public class ChatComponentMixin {
     // 1.21.1
     @Group(name = "purgeChatRectangle")
 	@WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/class_332;method_25294(IIIII)V"), remap = false)
-    private static boolean skipOriginalGraphicsIntermediary(int i, int j, int k, int l, int m) {
+    private static boolean skipOriginalGraphicsIntermediary(@Coerce Object instance, int i, int j, int k, int l, int m) {
         return allowHistoryRectangle();
     }
 
     @Group(name = "purgeChatRectangle")
     @WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;fill(IIIII)V"), remap = false)
-    private static boolean skipOriginalGraphicsMojmap(int i, int j, int k, int l, int m) {
+    private static boolean skipOriginalGraphicsMojmap(@Coerce Object instance, int i, int j, int k, int l, int m) {
         return allowHistoryRectangle();
     }
 
     // 1.21.11
     @Group(name = "purgeChatRectangle")
     @WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/class_338$class_12233;method_75809(IIIII)V"), remap = false)
-    private static boolean skipOriginalAccessObf(int i, int j, int k, int l, int m) {
+    private static boolean skipOriginalAccessObf(@Coerce Object instance, int i, int j, int k, int l, int m) {
         return allowHistoryRectangle();
     }
 
     @Group(name = "purgeChatRectangle")
     @WrapWithCondition(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/ChatComponent$ChatGraphicsAccess;fill(IIIII)V"), remap = false)
-    private static boolean skipOriginalAccessDeobf(int i, int j, int k, int l, int m) {
+    private static boolean skipOriginalAccessDeobf(@Coerce Object instance, int i, int j, int k, int l, int m) {
         return allowHistoryRectangle();
     }
 }
