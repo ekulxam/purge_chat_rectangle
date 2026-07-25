@@ -16,6 +16,9 @@
 	"icon": "assets/purge_chat_rectangle/icon.png",
 	"environment": "client",
 	"entrypoints": {
+        "client": [
+            "survivalblock.purgechatrectangle.PurgeChatRectangle"
+        ]
 	},
 	"mixins": [
 		"purge_chat_rectangle.mixins.json"

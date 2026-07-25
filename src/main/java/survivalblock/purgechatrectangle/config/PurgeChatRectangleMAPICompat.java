@@ -5,7 +5,7 @@ import kr1v.malilibApi.annotation.Config;
 import kr1v.malilibApi.config.plus.ConfigBooleanPlus;
 import survivalblock.purgechatrectangle.PurgeChatRectangle;
 
-@Config(value = PurgeChatRectangle.MOD_ID, name = "PCR")
+@Config(value = PurgeChatRectangle.MOD_ID, name = "purge_chat_rectangle.tab")
 public class PurgeChatRectangleMAPICompat implements PurgeChatRectangleConfig {
     public static PurgeChatRectangleConfig create() {
         MalilibApi.registerMod(PurgeChatRectangle.MOD_ID, "Purge Chat Rectangle");
