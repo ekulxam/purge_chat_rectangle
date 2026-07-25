@@ -21,4 +21,8 @@ public interface PurgeChatRectangleConfig {
         }
         return new PurgeChatRectangleConfig() {};
     }
+
+    static void init() {
+        // NO-OP
+    }
 }

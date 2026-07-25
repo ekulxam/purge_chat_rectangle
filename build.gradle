@@ -35,6 +35,8 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+    localRuntime "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
     implementation "net.kr1v:malilib-api:${project.malilib_api_version}"
     annotationProcessor "net.kr1v:malilib-api-processor:1.0.0"
     implementation "fi.dy.masa.malilib:malilib-fabric-${project.malilib_version}"
@@ -50,7 +52,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 8
+	it.options.release = 25
 }
 
 java {
