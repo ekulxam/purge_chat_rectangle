@@ -1,13 +1,10 @@
 package survivalblock.purgechatrectangle;
 
 import net.fabricmc.api.ClientModInitializer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import survivalblock.purgechatrectangle.config.PurgeChatRectangleConfig;
 
 public class PurgeChatRectangle implements ClientModInitializer {
     public static final String MOD_ID = "purge_chat_rectangle";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     @Override
     public void onInitializeClient() {
@@ -20,5 +17,23 @@ public class PurgeChatRectangle implements ClientModInitializer {
 
     public static boolean allowHistoryRectangle() {
         return !PurgeChatRectangleConfig.INSTANCE.removeHistoryRectangle();
+    }
+
+    public static void logError(String message, Throwable throwable) {
+        try {
+            org.slf4j.LoggerFactory.getLogger(MOD_ID).error(message, throwable);
+            return;
+        } catch (NoClassDefFoundError | Exception ignored) {
+        }
+
+        try {
+            org.apache.logging.log4j.LogManager.getLogger(MOD_ID).error(message, throwable);
+            return;
+        } catch (NoClassDefFoundError | Exception ignored) {
+        }
+
+        System.err.println("[" + MOD_ID + "] " + message);
+        //noinspection CallToPrintStackTrace (sorry I've already tried two loggers)
+        throwable.printStackTrace();
     }
 }

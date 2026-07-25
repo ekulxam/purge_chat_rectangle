@@ -53,7 +53,7 @@ public class PurgeChatRectangleMAPICompat implements PurgeChatRectangleConfig {
                 prettyName.set(HIDE_HISTORY_RECTANGLE, historyTranslated);
             } catch (NoSuchFieldException | IllegalAccessException e1) {
                 e1.addSuppressed(e);
-                PurgeChatRectangle.LOGGER.error("Unable to load config translations!", e1);
+                PurgeChatRectangle.logError("Unable to load config translations!", e1);
             }
         }
     }
