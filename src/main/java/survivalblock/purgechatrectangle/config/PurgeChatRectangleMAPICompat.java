@@ -16,12 +16,12 @@ public class PurgeChatRectangleMAPICompat implements PurgeChatRectangleConfig {
         return new PurgeChatRectangleConfig() {
             @Override
             public boolean removeInputRectangle() {
-                return HIDE_INPUT_RECTANGLE.get();
+                return HIDE_INPUT_RECTANGLE.getBooleanValue();
             }
 
             @Override
             public boolean removeHistoryRectangle() {
-                return HIDE_HISTORY_RECTANGLE.get();
+                return HIDE_HISTORY_RECTANGLE.getBooleanValue();
             }
         };
     }
@@ -44,14 +44,14 @@ public class PurgeChatRectangleMAPICompat implements PurgeChatRectangleConfig {
 
             translatedName.set(HIDE_INPUT_RECTANGLE, inputTranslated);
             translatedName.set(HIDE_HISTORY_RECTANGLE, historyTranslated);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+        } catch (ReflectiveOperationException e) {
             try {
                 Field prettyName = clazz.getDeclaredField("prettyName");
                 prettyName.setAccessible(true);
 
                 prettyName.set(HIDE_INPUT_RECTANGLE, inputTranslated);
                 prettyName.set(HIDE_HISTORY_RECTANGLE, historyTranslated);
-            } catch (NoSuchFieldException | IllegalAccessException e1) {
+            } catch (ReflectiveOperationException e1) {
                 e1.addSuppressed(e);
                 PurgeChatRectangle.logError("Unable to load config translations!", e1);
             }
