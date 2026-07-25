@@ -21,7 +21,7 @@ public abstract class ConfigScreenMixin extends GuiConfigsBase {
     }
 
     @WrapOperation(method = "createButton", at = @At(value = "INVOKE", target = "Lkr1v/malilibApi/ModRepresentation$Tab;translationKey()Ljava/lang/String;"))
-    private String letMeTranslate(ModRepresentation.Tab instance, Operation<String> original) {
+    private String letMeTranslateHer(ModRepresentation.Tab instance, Operation<String> original) {
         String tab = original.call(instance);
         return Objects.equals(this.modId, PurgeChatRectangle.MOD_ID) ? StringUtils.translate(tab) : tab;
     }
